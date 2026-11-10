@@ -125,7 +125,7 @@ def run_pipeline():
 
     # Phase 6: Visualization Chart Generation
     logger.info("\n[PHASE 6] Generating publication figures...")
-    plots = generate_all_plots(master_df, output_dir="outputs/figures")
+    plots = generate_all_plots(master_df, output_dir="outputs/figures", stats_summary=stats_summary)
 
     # Final Pipeline Summary
     logger.info("PIPELINE COMPLETED SUCCESSFULLY")
