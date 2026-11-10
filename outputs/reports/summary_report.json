@@ -1,18 +1,18 @@
 {
   "correlations": {
     "pooled_same_day": {
-      "pearson_r": 0.0439,
-      "pearson_p": 0.6566,
-      "spearman_r": 0.1001,
-      "spearman_p": 0.3096,
-      "sample_size": 105
+      "pearson_r": 0.0255,
+      "pearson_p": 0.7418,
+      "spearman_r": 0.029,
+      "spearman_p": 0.7078,
+      "sample_size": 170
     },
     "pooled_next_day": {
-      "pearson_r": -0.128,
-      "pearson_p": 0.2044,
-      "spearman_r": -0.1624,
-      "spearman_p": 0.1064,
-      "sample_size": 100
+      "pearson_r": -0.0338,
+      "pearson_p": 0.6667,
+      "spearman_r": 0.0341,
+      "spearman_p": 0.664,
+      "sample_size": 165
     },
     "per_ticker": {
       "AAPL": {
@@ -20,68 +20,68 @@
         "pearson_p": 1.0,
         "spearman_r": 0.0,
         "spearman_p": 1.0,
-        "sample_size": 21
+        "sample_size": 34
       },
       "MSFT": {
         "pearson_r": 0.0,
         "pearson_p": 1.0,
         "spearman_r": 0.0,
         "spearman_p": 1.0,
-        "sample_size": 21
+        "sample_size": 34
       },
       "NVDA": {
         "pearson_r": 0.0,
         "pearson_p": 1.0,
         "spearman_r": 0.0,
         "spearman_p": 1.0,
-        "sample_size": 21
+        "sample_size": 34
       },
       "RELIANCE.NS": {
-        "pearson_r": 0.2554,
-        "pearson_p": 0.2638,
-        "spearman_r": 0.2557,
-        "spearman_p": 0.2632,
-        "sample_size": 21
+        "pearson_r": 0.2638,
+        "pearson_p": 0.1317,
+        "spearman_r": 0.2869,
+        "spearman_p": 0.0999,
+        "sample_size": 34
       },
       "TCS.NS": {
-        "pearson_r": 0.0793,
-        "pearson_p": 0.7327,
-        "spearman_r": 0.1802,
-        "spearman_p": 0.4344,
-        "sample_size": 21
+        "pearson_r": -0.2759,
+        "pearson_p": 0.1142,
+        "spearman_r": -0.2101,
+        "spearman_p": 0.2329,
+        "sample_size": 34
       }
     }
   },
   "directional_accuracy": {
-    "positive_sentiment_days": 4,
-    "positive_directional_acc_pct": 75.0,
-    "negative_sentiment_days": 3,
-    "negative_directional_acc_pct": 33.33,
-    "total_active_sentiment_days": 7,
-    "overall_directional_acc_pct": 57.14
+    "positive_sentiment_days": 3,
+    "positive_directional_acc_pct": 66.67,
+    "negative_sentiment_days": 2,
+    "negative_directional_acc_pct": 50.0,
+    "total_active_sentiment_days": 5,
+    "overall_directional_acc_pct": 60.0
   },
   "logistic_regression": {
     "status": "success",
-    "sample_size": 105,
-    "accuracy": 0.581,
-    "precision": 0.581,
+    "sample_size": 170,
+    "accuracy": 0.5353,
+    "precision": 0.5353,
     "recall": 1.0,
-    "f1_score": 0.7349,
-    "roc_auc": 0.5261,
+    "f1_score": 0.6973,
+    "roc_auc": 0.5202,
     "confusion_matrix": [
       [
         0,
-        44
+        79
       ],
       [
         0,
-        61
+        91
       ]
     ],
     "coefficients": {
-      "intercept": 0.2942,
-      "mean_sentiment_coef": 0.055,
-      "headline_count_coef": 0.1172
+      "intercept": 0.1227,
+      "mean_sentiment_coef": 0.4367,
+      "headline_count_coef": 0.1063
     }
   }
 }

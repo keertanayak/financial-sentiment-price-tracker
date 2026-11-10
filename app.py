@@ -313,11 +313,12 @@ def main():
         if not sub_df.empty:
             fig = make_subplots(specs=[[{"secondary_y": True}]])
 
+            close_col = "Close_Price" if "Close_Price" in sub_df.columns else "Close"
             # Closing price smooth spline
             fig.add_trace(
                 go.Scatter(
                     x=sub_df["Date"],
-                    y=sub_df["Close_Price"],
+                    y=sub_df[close_col],
                     name="Close Price ($)",
                     line=dict(color="#38BDF8", width=3, shape="spline"),
                     mode="lines+markers",
@@ -379,12 +380,18 @@ def main():
     with tab2:
         st.markdown("### Scatter Regression Analysis")
         
+        return_col = "Daily_Return_Pct" if "Daily_Return_Pct" in master_df.columns else "Return_Pct"
+        close_col = "Close_Price" if "Close_Price" in master_df.columns else "Close"
+        hover_items = ["Date", "Headline_Count"]
+        if close_col in master_df.columns:
+            hover_items.append(close_col)
+
         scatter_fig = px.scatter(
             master_df,
             x="Mean_Sentiment",
-            y="Daily_Return_Pct",
+            y=return_col,
             color="Ticker",
-            hover_data=["Date", "Headline_Count", "Close_Price"],
+            hover_data=hover_items,
             trendline="ols",
             color_discrete_sequence=["#38BDF8", "#34D399", "#C084FC", "#FBBF24", "#F43F5E"],
             template="plotly_dark",

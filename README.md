@@ -9,7 +9,7 @@ An end-to-end quantitative computational pipeline that ingests financial news he
 
 ---
 
-## 🎯 Executive Summary & Objective
+##  Executive Summary & Objective
 
 In quantitative finance, news sentiment is often assumed to drive short-term price discovery. This project empirically tests the core hypothesis:
 > **"Does daily financial news sentiment exhibit a statistically significant correlation with daily asset price returns, or is market price noise dominant over short horizons?"**
@@ -25,7 +25,7 @@ Using a multi-ticker basket (`AAPL`, `MSFT`, `NVDA`, `RELIANCE.NS`, `TCS.NS`) ov
 
 ---
 
-## 🏗️ System Architecture
+##  System Architecture
 
 ```
                                 [ DATA INGESTION ]
@@ -59,7 +59,7 @@ Using a multi-ticker basket (`AAPL`, `MSFT`, `NVDA`, `RELIANCE.NS`, `TCS.NS`) ov
 
 ---
 
-## 📂 Directory Structure
+##  Directory Structure
 
 ```
 financial-sentiment-price-tracker/
@@ -96,7 +96,7 @@ financial-sentiment-price-tracker/
 
 ---
 
-## 🚀 Quickstart & Reproducibility Guide
+##  Quickstart & Reproducibility Guide
 
 ### 1. Prerequisites & Installation
 
@@ -144,7 +144,7 @@ pytest tests/
 
 ---
 
-## 📊 Sample Visualizations
+##  Sample Visualizations
 
 ### 1. Dual-Axis Stock Price vs. Sentiment Overlay
 ![AAPL Overlay](outputs/figures/sentiment_price_overlay_AAPL.png)
@@ -154,7 +154,7 @@ pytest tests/
 
 ---
 
-## 🔬 Methodology Details
+##  Methodology Details
 
 ### Market-Hour Time Shift Rule
 Financial news published after market close (e.g. 4:00 PM EST for US markets) or on non-trading days (weekends/holidays) cannot impact price until the next market open. The pipeline shifts article publication timestamps $T$ to the next valid trading day $t+1$:
@@ -167,6 +167,6 @@ where $x$ is the sum of valence scores of words in the headline and $\alpha = 15
 
 ---
 
-## 📜 License
+##  License
 
 Distributed under the MIT License. See [LICENSE](LICENSE) for details.

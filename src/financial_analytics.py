@@ -118,9 +118,13 @@ def create_master_dataset(
     master["Dominant_Class"] = master["Dominant_Class"].fillna("Neutral")
     master["No_News"] = master["No_News"].fillna(True).astype(bool)
 
+    # Standardized alias columns for downstream compatibility (spec vs convention)
+    master["Close_Price"] = master["Close"]
+    master["Daily_Return_Pct"] = master["Return_Pct"]
+
     # Reorder columns standardly
     cols = [
-        "Ticker", "Date", "Close", "Return_Pct", "Return_Log",
+        "Ticker", "Date", "Close", "Close_Price", "Return_Pct", "Daily_Return_Pct", "Return_Log",
         "Next_Return_Pct", "Next_Return_Log", "Price_Direction", "Volatility",
         "Headline_Count", "Mean_Sentiment", "Pos_Count", "Neg_Count", "Neu_Count",
         "Dominant_Class", "No_News"
