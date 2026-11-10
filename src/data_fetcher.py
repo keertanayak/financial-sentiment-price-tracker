@@ -12,6 +12,7 @@ import os
 import sys
 import time
 import logging
+from typing import List, Optional, Dict, Any, Callable
 from datetime import datetime, timedelta
 import pandas as pd
 import requests
@@ -36,7 +37,7 @@ DEFAULT_TICKERS = ["AAPL", "MSFT", "NVDA", "RELIANCE.NS", "TCS.NS"]
 DEFAULT_DAYS_BACK = 30
 
 
-def retry_with_backoff(func, max_retries=3, backoff_factor=1.5, *args, **kwargs):
+def retry_with_backoff(func: Callable, max_retries: int = 3, backoff_factor: float = 1.5, *args, **kwargs) -> Any:
     """
     Execute a function with exponential backoff retry.
     """
@@ -53,11 +54,11 @@ def retry_with_backoff(func, max_retries=3, backoff_factor=1.5, *args, **kwargs)
 
 
 def fetch_market_prices(
-    tickers: list = None,
-    start_date: str = None,
-    end_date: str = None,
+    tickers: Optional[List[str]] = None,
+    start_date: Optional[str] = None,
+    end_date: Optional[str] = None,
     days_back: int = DEFAULT_DAYS_BACK,
-    output_path: str = "data/raw/raw_prices.csv"
+    output_path: Optional[str] = "data/raw/raw_prices.csv"
 ) -> pd.DataFrame:
     """
     Fetch daily stock price history (OHLCV + Adj Close) for given tickers via yfinance.
@@ -290,11 +291,11 @@ def fetch_news_yfinance(tickers: list) -> list:
 
 
 def fetch_news_headlines(
-    tickers: list = None,
-    start_date: str = None,
-    end_date: str = None,
+    tickers: Optional[List[str]] = None,
+    start_date: Optional[str] = None,
+    end_date: Optional[str] = None,
     days_back: int = DEFAULT_DAYS_BACK,
-    output_path: str = "data/raw/raw_news.csv"
+    output_path: Optional[str] = "data/raw/raw_news.csv"
 ) -> pd.DataFrame:
     """
     Fetch news headlines per ticker using available primary API (NewsAPI/GNews) with yfinance fallback.
